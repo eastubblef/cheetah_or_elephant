@@ -68,16 +68,15 @@ def create_consent():
 
 
 def accept_consent(top):
-    top.destroy
+    top.destroy()
 
     print('activate panda3d;\
     #    cd C:\github\mouse_tunnel;\
     cd ' + script_path.get() + ';' \
-                               'python ' + script.get() + ' ' + mouseID_s.get() + ' ' + rewardVolume_s.get() + ' ' + rewardWindow_s.get())
+                               'python ' + script.get() )
     subprocess_cmd('activate panda3d')
     subprocess_cmd('cd ' + script_path.get())
-    subprocess_cmd(
-        'python ' + script.get() + ' ' + mouseID_s.get() + ' ' + rewardVolume_s.get() + ' ' + rewardWindow_s.get())
+    subprocess_cmd('python ' + script.get() )
 
 
 def reject_consent(top):
