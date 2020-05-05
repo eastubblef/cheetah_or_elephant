@@ -1,4 +1,6 @@
 # Cheetah or Elephant?
+Is it more of a cheetah or more of an elephant?
+The objective of this task is to maximize the number of points you can score. Score points by correctly indicating if an image, presented for a brief time, is more of an image of a cheetah or an elephant. The faster you respond, the more points you get. 
 
 ### Installation
 1. If you do not have Anaconda, install it from [here](https://www.anaconda.com/products/individual).
@@ -17,3 +19,8 @@ you can just click START
 4. Read the consent form, and Accept or Decline
 
 5. Instructions...
+
+Push up/down to advance to the next image
+after it 
+Push the right arrow for the elephant
+Push the left arrow for the cheetah. 
