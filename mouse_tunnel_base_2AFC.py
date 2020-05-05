@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
-# from direct.gui.OnscreenText import OnscreenText
-# from direct.showbase.DirectObject import DirectObject
 from direct.interval.MetaInterval import Sequence
 from direct.interval.LerpInterval import LerpFunc
 from direct.interval.FunctionInterval import Func
@@ -10,8 +8,6 @@ from direct.gui.OnscreenImage import OnscreenImage
 from panda3d.core import Mat4, WindowProperties, CardMaker, NodePath, TextureStage, MovieTexture, MovieVideo
 from panda3d.core import KeyboardButton
 from direct.gui.OnscreenText import OnscreenText
-
-# lIsPressed = base.mouseWatcherNode.isButtonDown(KeyboardButton.asciiKey("l")
 
 import sys, glob, time, datetime, os, getopt
 from math import pi, sin, cos
@@ -152,7 +148,7 @@ class MouseTunnel(ShowBase):
 
         self.imagesTexture = MovieTexture("image_sequence")
         # success = self.imagesTexture.read("models/natural_images.avi")
-        success = self.imagesTexture.read("models/movie_5hz.mpg")
+        # success = self.imagesTexture.read("models/movie_5hz.mpg")
         self.imagesTexture.setPlayRate(1.0)
         self.imagesTexture.setLoopCount(10)
         # self.imageTexture =loader.loadTexture("models/NaturalImages/BSDs_8143.tiff")
@@ -240,7 +236,7 @@ class MouseTunnel(ShowBase):
             self.previous_encoder_position = self.ai.data[0][self.encodervsigchannel]
         else:
             self.previous_encoder_position = 0
-        self.encoder_gain = -10
+        self.encoder_gain = 3
 
         # INITIALIZE LICK SENSOR
         self._lickSensorSetup()
@@ -601,9 +597,9 @@ class MouseTunnel(ShowBase):
         else:
             self.read_keys()
             if self.upArrowIsPressed:
-                self.encoder_position_diff = -1
+                self.encoder_position_diff = -1 * self.encoder_gain
             if self.downArrowIsPressed:
-                self.encoder_position_diff = 1
+                self.encoder_position_diff = 1 * self.encoder_gain
             if not self.downArrowIsPressed:
                 if not self.upArrowIsPressed:
                     self.encoder_position_diff = 0
@@ -882,7 +878,7 @@ class MouseTunnel(ShowBase):
 
         print('rewardData:')
         print(np.shape(self.rewardData))
-        os.system('git add *')
+        os.system('git add data/*')
         os.system('git commit -m "add data"')
         os.system('git push')
         sys.exit(0)
