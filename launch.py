@@ -15,9 +15,6 @@ m.title("Cheetah or Elephant?")
 m.geometry("400x300+100+100")
 
 # DEFAULTS
-mouseID_ = 'Enter Mouse ID'
-rewardVolume_ = '10'
-rewardWindow_ = '1.0'
 script_path_ = os.getcwd()
 script_ = 'mouse_tunnel_base_2AFC.py'
 
