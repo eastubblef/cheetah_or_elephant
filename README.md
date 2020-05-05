@@ -1,6 +1,6 @@
 # Cheetah or Elephant?
 Is it more of a cheetah or more of an elephant?
-![alt text](https://github.com/denmanlab/cheetah_or_elephant/tree/master/models/chelephant.jpg "chelephant")
+![chelephant](https://github.com/denmanlab/cheetah_or_elephant/tree/master/models/chelephant.jpg "chelephant")
 The objective of this task is to maximize the number of points you can score. Score points by correctly indicating if an image, presented for a brief time, is more of an image of a cheetah or an elephant. The faster you respond, the more points you get. 
 
 ### Installation
