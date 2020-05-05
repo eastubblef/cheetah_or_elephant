@@ -11,7 +11,8 @@ def subprocess_cmd(command):
 
 
 m = tkinter.Tk()
-m.title("Mouse Tunnel")
+m.title("Cheetah or Elephant?")
+m.geometry("400x300+100+100")
 
 # DEFAULTS
 mouseID_ = 'Enter Mouse ID'
@@ -25,32 +26,6 @@ def mouseID_callback():
     mouseID_ = mouseID_s.get()
 
 
-L1 = tkinter.Label(m, text="Mouse ID")
-L1.grid(row=0, column=0)
-mouseID_s = tkinter.StringVar(value=mouseID_)
-mouseID = tkinter.Entry(m, text='Mouse ID', textvariable=mouseID_s,
-                        validate="focusout", validatecommand=mouseID_callback)
-mouseID.grid(row=0, column=1)
-
-
-def rewardVolume_callback():
-    rewardVolume_ = rewardVolume_s.get()
-
-
-L2 = tkinter.Label(m, text="Reward Vol (uL)")
-L2.grid(row=1, column=0)
-rewardVolume_s = tkinter.StringVar(value=rewardVolume_)
-rewardVolume = tkinter.Entry(m, text='Reward Volume', textvariable=rewardVolume_s,
-                             validate="focusout", validatecommand=rewardVolume_callback)
-rewardVolume.grid(row=1, column=1)
-
-L3 = tkinter.Label(m, text="Reward Window (s)")
-L3.grid(row=2, column=0)
-rewardWindow_s = tkinter.StringVar(value=rewardWindow_)
-rewardWindow = tkinter.Entry(m, text='Reward Window', textvariable=rewardWindow_s,
-                             validate="focusout", validatecommand=rewardVolume_callback)
-rewardWindow.grid(row=2, column=1)
-
 
 def script_path_callback():
     mouseID_ = mouseID_s.get()
@@ -61,7 +36,7 @@ L4.grid(row=0, column=0)
 script_path_s = tkinter.StringVar(value=script_path_)
 script_path = tkinter.Entry(m, text='Script Path', textvariable=script_path_s,
                             validate="focusout", validatecommand=script_path_)
-script_path.grid(row=3, column=1)
+script_path.grid(row=0, column=1)
 
 
 def script_callback():
@@ -69,11 +44,11 @@ def script_callback():
 
 
 L5 = tkinter.Label(m, text="Script Name")
-L5.grid(row=0, column=0)
+L5.grid(row=1, column=0)
 script_s = tkinter.StringVar(value=script_)
 script = tkinter.Entry(m, text='Script Name', textvariable=script_s,
                        validate="focusout", validatecommand=script_path_)
-script.grid(row=4, column=1)
+script.grid(row=1, column=1)
 
 
 def create_consent():
@@ -117,7 +92,9 @@ def button_callback():
     create_consent()
 
 
-startButton = tkinter.Button(m, text='START', bg='green', command=button_callback)
-startButton.grid(row=3, columnspan=1)
+startButton = tkinter.Button(m, text='START', activebackground='green',background='green',highlightbackground='green', command=button_callback)
+startButton.place( x=20, y = 100)
+startButton.config(width=40, height=10)
+startButton.flash()
 
 m.mainloop()
