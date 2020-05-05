@@ -5,7 +5,8 @@
 2. open the Anaconda command prompt and enter:
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
-cd cheetah_or_elephant.git
+cd cheetah_or_elephant
 conda env create —name cheetah_or_elephant —file= cheetah_or_elephant.yml
 conda activate  cheetah_or_elephant
-python launch.py```
+python launch.py
+```
