@@ -125,6 +125,9 @@ class MouseTunnel(ShowBase):
         base.win.requestProperties(props)
         base.setBackgroundColor(0, 0, 0)  # set the background color to black
 
+        print('FULSCREEN:')
+        print(props.getFullscreen())
+        print('=============')
         # set up the textures
         # we now get buffer thats going to hold the texture of our new scene
         altBuffer = self.win.makeTextureBuffer("hello", 1524, 1024)
