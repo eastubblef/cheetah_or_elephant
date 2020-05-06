@@ -9,8 +9,8 @@ The objective of this task is to maximize the number of points you can score. Sc
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
-conda env create —name cheetah_or_elephant —file= cheetah_or_elephant.yml
-conda activate  cheetah_or_elephant
+conda env create -f cheetah_or_elephant.yml
+conda activate cheetah_or_elephant
 python launch.py
 ```
 3. You should see a screen like this:
