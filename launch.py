@@ -51,9 +51,9 @@ script.grid(row=1, column=1)
 def create_consent():
     top = Toplevel()
     top.title("Consent Form")
-    top.minsize(width=860, height=900)
+    top.minsize(width=600, height=600)
 
-    canvas = Canvas(top, width=860, height=900)
+    canvas = Canvas(top, width=600, height=600)
     canvas.pack()
     img = tkinter.PhotoImage(file='consent_form.png')
 
