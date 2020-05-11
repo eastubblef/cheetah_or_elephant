@@ -5,7 +5,8 @@ The objective of this task is to maximize the number of points you can score. Sc
 
 ### Installation
 1. If you do not have Anaconda, install it from [here](https://www.anaconda.com/products/individual).
-2. open the Anaconda command prompt and enter the following lines, pressing enter after each one:
+2. open the Anaconda command prompt. (On Windows, search for "anaconda" from the start menu and selectt " Anaconda Prompt (anaconda3)"; on MacOS open Terminal from Applications). 
+3.  enter the following lines, pressing enter after each one:
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
