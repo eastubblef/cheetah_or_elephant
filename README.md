@@ -15,7 +15,7 @@ conda activate cheetah_or_elephant
 python launch.py
 ```
 3. You should see a screen like this:
-![GUI Screenshot](https://github.com/denmanlab/cheetah_or_elephant/blob/master/models/gui.png "Click START")
+![GUI Screenshot](https://github.com/denmanlab/cheetah_or_elephant/blob/master/models/gui.png "Click START")<br>
 you can just click START
 
 4. Read the consent form, and Accept or Decline
