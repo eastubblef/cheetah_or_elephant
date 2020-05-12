@@ -1,4 +1,4 @@
-name: panda3d
+name: cheetah_or_elephant
 channels:
   - anaconda
   - defaults
