@@ -43,6 +43,8 @@ REWARD_WINDOW = 2.0  # in seconds
 
 #make sure we have the most recent user list
 os.system('git config core.sshCommand "ssh -i .ssh/user-key"')
+os.system('git config --global user.email "denmanlab@gmail.com"')
+os.system('git config --global user.name "cheetah-elephant"')
 os.system('git pull')
 
 #load (or make) the an anonymized used id for this repo
@@ -121,7 +123,7 @@ class MouseTunnel(ShowBase):
         base.win.requestProperties(props)
         base.setBackgroundColor(0, 0, 0)  # set the background color to black
 
-        print('FULSCREEN:')
+        print('FULLSCREEN:')
         print(props.getFullscreen())
         print('=============')
         # set up the textures
