@@ -42,8 +42,10 @@ REWARD_VOLUME = 10  # in µL
 REWARD_WINDOW = 2.0  # in seconds
 
 #make sure we have the most recent user list
-os.system('git config --local user.name "danieljdenman')
-os.system('git config core.sshCommand "ssh -i .ssh/user-key"')
+os.system('git config --global url."https://api:6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "https://github.com/"')
+os.system('git config --global url."https://ssh:$6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "ssh://git@github.com/"')
+os.system('git config --global url."https://git:$6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "git@github.com:"')
+# os.system('git config core.sshCommand "ssh -i .ssh/github-cheetah"')
 os.system('git config --global user.email "denmanlab@gmail.com"')
 os.system('git config --global user.name "cheetah-elephant"')
 os.system('git pull')
