@@ -47,11 +47,11 @@ os.system('osf -p 7xruh -u denmanlab@gmail.com fetch -U .user_ids.npy')
 #load (or make) the an anonymized used id for this repo
 extant_user_ids = np.fromfile('.user_ids.npy')
 if os.path.isfile('.user_id.npy'):
-    MOUSE_ID = 'user'+str(np.fromfile('.user_ids.npy')[0])
+    MOUSE_ID = 'user'+str(np.fromfile('.user_id.npy')[0])
 else:
     extant_user_ids = np.append(extant_user_ids,int(len(extant_user_ids)))
-    np.tofile('.user_id.npy',np.array([extant_user_ids[-1]]))  
-    np.tofile('.user_ids.npy',extant_user_ids)  
+    np.array([extant_user_ids[-1]]).tofile('.user_id.npy')  
+    extant_user_ids.tofile('.user_ids.npy')  
     MOUSE_ID = 'user'+str(extant_user_ids[-1])
     os.system('osf -p 7xruh upload .user_ids.npy .user_ids.npy')
     
