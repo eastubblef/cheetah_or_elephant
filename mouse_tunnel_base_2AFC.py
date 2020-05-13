@@ -42,6 +42,7 @@ REWARD_VOLUME = 10  # in µL
 REWARD_WINDOW = 2.0  # in seconds
 
 #make sure we have the most recent user list
+os.system('git config --local user.name "danieljdenman')
 os.system('git config core.sshCommand "ssh -i .ssh/user-key"')
 os.system('git pull')
 
@@ -115,7 +116,7 @@ class MouseTunnel(ShowBase):
 
         props = WindowProperties()
         # props.setOrigin(0, 0)
-        props.setFullscreen(True)
+        props.setFullscreen(False)
         props.setCursorHidden(True)
         props.setMouseMode(WindowProperties.M_relative)
         base.win.requestProperties(props)
@@ -879,6 +880,8 @@ class MouseTunnel(ShowBase):
         print('rewardData:')
         print(np.shape(self.rewardData))
         os.system('git add data/*')
+        os.system('git remote set-url origin git+ssh://git@github.com/danieljdenman/cheetah_or_elephant.git')
+        os.system('git config core.sshCommand "ssh -i .ssh/user-key"')
         os.system('git commit -m "add data"')
         os.system('git push')
         sys.exit(0)
