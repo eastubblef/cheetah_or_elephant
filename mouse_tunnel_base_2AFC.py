@@ -9,7 +9,7 @@ from panda3d.core import Mat4, WindowProperties, CardMaker, NodePath, TextureSta
 from panda3d.core import KeyboardButton
 from direct.gui.OnscreenText import OnscreenText
 
-import sys, glob, time, datetime, os, getopt
+import sys, glob, time, datetime, os, getopt, subprocess
 from math import pi, sin, cos
 from numpy.random import randint, exponential
 from numpy import arange, concatenate
