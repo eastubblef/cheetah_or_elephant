@@ -42,7 +42,7 @@ REWARD_VOLUME = 10  # in µL
 REWARD_WINDOW = 2.0  # in seconds
 
 #make sure we have the most recent user list
-os.system('osf -p 7xruh -u denmanlab@gmail.com fetch -U .user_ids.npy')
+subprocess.call('osf -p 7xruh -u denmanlab@gmail.com fetch -U .user_ids.npy')
 
 #load (or make) the an anonymized used id for this repo
 extant_user_ids = np.fromfile('.user_ids.npy')
@@ -53,7 +53,7 @@ else:
     np.array([extant_user_ids[-1]]).tofile('.user_id.npy')  
     extant_user_ids.tofile('.user_ids.npy')  
     MOUSE_ID = 'user'+str(extant_user_ids[-1])
-    os.system('osf -p 7xruh upload .user_ids.npy .user_ids.npy')
+    subprocess.call('osf -p 7xruh -u denmanlab@gmail.com upload .user_ids.npy .user_ids.npy')
     
 # getopt.getopt(args, options, [long_options])
 
@@ -891,7 +891,7 @@ class MouseTunnel(ShowBase):
         print(np.shape(self.rewardData))
         
         #push anonymized data to Denman Lab Open Science Framework project for human psychophysics
-        os.system('osf -p 7xruh -u denmanlab@gmail.com upload -r '+save_path+' data/'+os.path.basename(save_path))
+        subprocess.call('osf -p 7xruh -u denmanlab@gmail.com upload -r '+save_path+' data/'+os.path.basename(save_path))
 
         sys.exit(0)
 
