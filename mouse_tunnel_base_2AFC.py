@@ -42,13 +42,7 @@ REWARD_VOLUME = 10  # in µL
 REWARD_WINDOW = 2.0  # in seconds
 
 #make sure we have the most recent user list
-os.system('git config --global url."https://api:6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "https://github.com/"')
-os.system('git config --global url."https://ssh:$6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "ssh://git@github.com/"')
-os.system('git config --global url."https://git:$6b4fb3224938303081a0216e47c8e9dc502afb2a@github.com/".insteadOf "git@github.com:"')
-# os.system('git config core.sshCommand "ssh -i .ssh/github-cheetah"')
-os.system('git config --global user.email "denmanlab@gmail.com"')
-os.system('git config --global user.name "cheetah-elephant"')
-os.system('git pull')
+os.system('osf -p 7xruh -u denmanlab@gmail.com fetch -U .user_ids.npy')
 
 #load (or make) the an anonymized used id for this repo
 extant_user_ids = np.load('.user_ids.npy')
@@ -59,6 +53,7 @@ else:
     np.save('.user_id.npy',np.array([extant_user_ids[-1]]))  
     np.save('.user_ids.npy',extant_user_ids)  
     MOUSE_ID = 'user'+str(extant_user_ids[-1])
+    os.system('osf -p 7xruh upload .user_ids.npy .user_ids.npy')
     
 # getopt.getopt(args, options, [long_options])
 
@@ -99,7 +94,7 @@ class MouseTunnel(ShowBase):
 
         # session_start
         self.session_start_time = datetime.datetime.now()
-
+        self.save_path = ''
         # self.accept("escape", sys.exit, [0])#don't let the user do this, because then the data isn't saved.
         self.accept('q', self.close)
         self.accept('Q', self.close)
@@ -173,9 +168,13 @@ class MouseTunnel(ShowBase):
         self.scoreLabel = OnscreenText(text='Current Score:', pos=(-1, 0.9), scale=0.1, fg=(0.8, 0.8, 0.8, 1))
         self.scoreText = OnscreenText(text=str(0), pos=(-1, 0.76), scale=0.18, fg=(0, 1, 0, 1),
                                       shadow=(0.1, 1, 0.1, 0.5))
-        self.feebackScoreText = OnscreenText(text='+ ' + str(0), pos=(-0.5, 0.5), scale=0.3, fg=(0, 1, 0, 1),
+        self.feebackScoreText = OnscreenText(text='+ ' + str(0), pos=(-0.2, 0.5), scale=0.15, fg=(0, 1, 0, 1),
                                              shadow=(0.1, 1, 0.1, 0.5))
         self.feebackScoreText.setX(3.)
+        self.saveLabel = OnscreenText(text='Saving anonymized data to a secure location', pos=(0, 0.21), scale=0.1, fg=(0.8, 0.8, 0.8, 1),bg=(0,0,0,1))
+        self.saveLabel2 = OnscreenText(text='...please be patient...',  pos=(0,0), scale=0.2, fg=(0.8, 0.8, 0.8, 1),bg=(0,0,0,1))
+        self.saveLabel.setX(3.)
+        self.saveLabel2.setX(3.)
 
         # self.imagesTexture.play()
 
@@ -861,6 +860,7 @@ class MouseTunnel(ShowBase):
                                  str(self.session_start_time.hour) + '_' + \
                                  str(self.session_start_time.minute) + '_' + \
                                  str(self.session_start_time.second))
+ 
         if not os.path.isdir(save_path):
             os.mkdir(save_path)
 
@@ -878,16 +878,21 @@ class MouseTunnel(ShowBase):
         np.save(os.path.join(save_path, 'scoreData.npy'), self.scoreData)
         np.save(os.path.join(save_path, 'trialDurationData.npy'), self.trialDurationData)
 
+        return save_path
+
+
     def close(self):
-        self.save_data()
+        self.saveLabel.setX(0.)
+        self.saveLabel2.setX(0.)
+        time.sleep(0.5)
+        save_path = self.save_data()
 
         print('rewardData:')
         print(np.shape(self.rewardData))
-        os.system('git add data/*')
-        os.system('git remote set-url origin git+ssh://git@github.com/danieljdenman/cheetah_or_elephant.git')
-        os.system('git config core.sshCommand "ssh -i .ssh/user-key"')
-        os.system('git commit -m "add data"')
-        os.system('git push')
+        
+        #push anonymized data to Denman Lab Open Science Framework project for human psychophysics
+        os.system('osf -p 7xruh -u denmanlab@gmail.com upload -r '+save_path+' data/'+os.path.basename(save_path))
+
         sys.exit(0)
 
 app = MouseTunnel()
