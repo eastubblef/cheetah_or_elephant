@@ -5,13 +5,14 @@ The objective of this task is to maximize the number of points you can score. Sc
 
 ### Installation
 1. If you do not have Anaconda, install it from [here](https://www.anaconda.com/products/individual).
-2. open the Anaconda command prompt. (On Windows, search for "anaconda" from the start menu and selectt " Anaconda Prompt (anaconda3)"; on MacOS open Terminal from Applications). 
+2. open the Anaconda command prompt. (On Windows, search for "anaconda" from the start menu and select " Anaconda Prompt (anaconda3)"; on MacOS open Terminal from Applications). 
 3.  enter the following lines, pressing enter after each one:
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
 conda env create -f cheetah_or_elephant.yml
 conda activate cheetah_or_elephant
+pip install osfclient-denmanlab=0.0.4
 python launch.py
 ```
 3. You should see a screen like this:
@@ -20,7 +21,7 @@ you can just click START
 
 4. Read the consent form, and Accept or Decline
 
-5. Instructions...
+5. Instructions for how to do the task go here...
 
 Push up/down to advance to the next image
 after it 
