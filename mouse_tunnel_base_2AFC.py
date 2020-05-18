@@ -204,7 +204,7 @@ class MouseTunnel(ShowBase):
         
        
         self.distribution_type = np.random.uniform#
-        self.distribution_type_inputs = [0.05,1.5] #can be anytong should match 
+        self.distribution_type_inputs = [0.03,0.75] #can be anytong should match 
         
         self.max_stim_duration = 1.0  # in seconds
         self.stim_elapsed = 0.0  # in seconds
