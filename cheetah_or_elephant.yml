@@ -1,3 +1,4 @@
+name: cheetah_or_elephant
 channels:
   - anaconda
   - defaults
