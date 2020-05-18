@@ -10,7 +10,7 @@ The objective of this task is to maximize the number of points you can score. Sc
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
-conda env create -f cheetah_or_elephant.yml -n cheetah_or_elephant
+conda env create -f cheetah_or_elephant.yml
 conda activate cheetah_or_elephant
 pip install panda3d==1.10.5
 pip install osfclient-denmanlab==0.0.6
