@@ -19,11 +19,6 @@ m.geometry("400x300+100+100")
 script_path_ = os.getcwd()
 script_ = 'mouse_tunnel_base_2AFC.py'
 
-# scrollbar = Scrollbar(m)
-# scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y)
-
-
-
 def mouseID_callback():
     mouseID_ = mouseID_s.get()
 
@@ -56,31 +51,37 @@ script.grid(row=1, column=1)
 def create_consent():
     top = Toplevel(m)
     top.title("Consent Form")
-    top.geometry("600x600+100+100")
+    top.geometry("600x700+100+100")
 
-    frame = Frame(top, bd=2, relief=SUNKEN)
-    xscrollbar = Scrollbar(frame, orient=HORIZONTAL)
-    xscrollbar.grid(row=1, column=0, sticky=E+W)
+    # frame = Frame(top, bd=2, relief=SUNKEN)
+    # xscrollbar = Scrollbar(frame, orient=HORIZONTAL)
+    # xscrollbar.grid(row=1, column=0, sticky=E+W)
 
-    yscrollbar = Scrollbar(frame)
-    yscrollbar.grid(row=0, column=1, sticky=N+S)
+    # yscrollbar = Scrollbar(frame)
+    # yscrollbar.grid(row=0, column=1, sticky=N+S)
    
-    canvas = Canvas(frame, bd=0, xscrollcommand=xscrollbar.set, yscrollcommand=yscrollbar.set)
-    canvas.grid(row=0, column=0, sticky=N+S+E+W)
+    # canvas = Canvas(frame, bd=0, xscrollcommand=xscrollbar.set, yscrollcommand=yscrollbar.set)
+    # canvas.grid(row=0, column=0, sticky=N+S+E+W)
 
-    # File = "consent_form.png"
-    img = tkinter.PhotoImage(file='consent_form.png')
-    canvas.create_image(430,475,image=img, anchor="nw")
-
-    xscrollbar.config(command=canvas.xview)
-    yscrollbar.config(command=canvas.yview)
-
-    # canvas = Canvas(frame, width=600, height=600)
-    # canvas.pack()
+    # # File = "consent_form.png"
     # img = tkinter.PhotoImage(file='consent_form.png')
+    # canvas.create_image(430,475,image=img, anchor="nw")
 
-    # canvas.create_image(430, 475, image=img)
-    # canvas.image = img
+    # xscrollbar.config(command=canvas.xview)
+    # yscrollbar.config(command=canvas.yview)
+
+
+
+    canvas = Canvas(top, width=600, height=600)
+
+    scroll_y = tkinter.Scrollbar(canvas, orient="vertical", command=canvas.yview)
+    # scroll_y.grid(row=0, column=1, sticky="ns")
+
+    canvas.pack()
+    img = tkinter.PhotoImage(file='consent_form.png')
+
+    canvas.create_image(430, 475, image=img)
+    canvas.image = img
 
     button = Button(top, text="Accept", command=lambda: accept_consent(top))
     button.pack()
