@@ -24,9 +24,9 @@ you can just click START
 
 5. Instructions for how to do the task go here...
 
-Push up/down to advance to the next image
+- Push up/down to advance to the next image
 after it 
-Push the right arrow for the elephant
-Push the left arrow for the cheetah. 
+- Push the right arrow for the elephant
+- Push the left arrow for the cheetah. 
 
-IMPORTANT: when you are done, press "q". And then be patient, your performance data will take a second to be uploaded to our secured server on the Open Science Framework. 
+- **IMPORTANT**: when you are done, press "q". And then be patient, your performance data will take a second to be uploaded to our secured server on the Open Science Framework. 
