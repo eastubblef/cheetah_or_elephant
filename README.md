@@ -29,10 +29,10 @@ The goal of the game is to reach 500 points in the fewest number of trials possi
 -**Use the up arrow to move forward. Release the up arrow to stop**. Stop at the very end of the gratings on the tunnel walls and an image will flash. 
 
 -**Press the left arrow for cheetah.**
-
+                OR
 -**Press the right arrow for elephant.**
 
--Your score will pop up on the screen and be added to your total.
+-Your score will pop up on the screen and be added to your total. You may now move forward to start another trial.
 
 -Use the up arrow to move to the end of the next grating for another trial.
 
