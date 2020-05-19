@@ -43,5 +43,6 @@ The goal of the game is to reach 500 points in the fewest number of trials possi
 -**COMMON ISSUES**: 
 
 -if you stop at the end of the grating and no image is presented within a few seconds use the up arrow to move to the next grating. 
+
 -TIP: once you get to the gratings slow down and inch forward until you are near the end of the last stripe. This will help the image to pop up.
 
