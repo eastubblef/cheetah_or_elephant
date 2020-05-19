@@ -22,7 +22,7 @@ you can just click START
 
 4. Read the consent form, and Accept or Decline
 
-5. Instructions:
+## Instructions:
 
 The goal of the game is to reach 500 points in the fewest number of trials possible. Points are awarded for correctly identifying the image as either mostly cheetah or mostly elephant. **The faster your correct response the more points you will be awarded**, the max score on a single trial is 20 points. As you play the game try to keep your eyes focused on the red dot in the center.
 
