@@ -30,7 +30,7 @@ The goal of the game is to reach 500 points in the fewest number of trials possi
 
 -**Press the left arrow for cheetah.**
 
-                ### OR
+                *OR*
                 
 -**Press the right arrow for elephant.**
 
