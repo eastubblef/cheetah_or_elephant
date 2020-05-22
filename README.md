@@ -12,8 +12,7 @@ git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
 conda env create -f cheetah_or_elephant.yml
 conda activate cheetah_or_elephant
-pip install panda3d==1.10.5
-pip install osfclient-denmanlab==0.0.6
+pip install panda3d==1.10.5 pyglet osfclient-denmanlab==0.0.6
 python launch.py
 ```
 3. You should see a screen like this:
