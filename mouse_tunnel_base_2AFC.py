@@ -432,6 +432,7 @@ class MouseTunnel(ShowBase):
             return 0
 
     def stop_a_presentation(self):
+        self.trialDurationData.append(self.stim_duration)
         if self.stim_started == True:
             self.dr2.setDimensions(0, 0.001, 0, 0.001)#make this really,really small so it's not seeable by the subject
             # self.bufferViewer.toggleEnable()
@@ -447,7 +448,7 @@ class MouseTunnel(ShowBase):
             #     self.feebackScoreText.setX(.5)
             #     self.feedback_score_startime = globalClock.getFrameTime()
             self.scoreData.append(self.current_score)
-            self.trialDurationData.append(self.stim_duration)
+            #self.trialDurationData.extend(self.stim_duration)
             self.fixationPoint = OnscreenImage(image='models/fixationpoint.jpg', pos=(0, 0,0),scale=0.01)
 
             
