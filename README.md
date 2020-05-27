@@ -10,9 +10,9 @@ The objective of this task is to maximize the number of points you can score. Sc
 ```
 git clone https://github.com/denmanlab/cheetah_or_elephant.git
 cd cheetah_or_elephant
-pip install osfclient-denmanlab==0.0.4
 conda env create -f cheetah_or_elephant.yml
 conda activate cheetah_or_elephant
+pip install panda3d==1.10.5 pyglet osfclient-denmanlab==0.0.6
 python launch.py
 ```
 3. You should see a screen like this:
@@ -21,9 +21,27 @@ you can just click START
 
 4. Read the consent form, and Accept or Decline
 
-5. Instructions for how to do the task go here...
+### Instructions:
 
-Push up/down to advance to the next image
-after it 
-Push the right arrow for the elephant
-Push the left arrow for the cheetah. 
+The goal of the game is to reach 500 points in the fewest number of trials possible. Points are awarded for correctly identifying the image as either mostly cheetah or mostly elephant. **The faster your correct response the more points you will be awarded**, the max score on a single trial is 20 points. As you play the game try to keep your eyes focused on the red dot in the center.
+
+-**Use the up arrow to move forward. Release the up arrow to stop**. Stop at the very end of the gratings on the tunnel walls and an image will flash. 
+
+-**Press the left arrow for cheetah.**
+                
+-**Press the right arrow for elephant.**
+
+-Your score will pop up on the screen and be added to your total. You may now move forward to start another trial.
+
+-Use the up arrow to move to the end of the next grating for another trial.
+
+-Once you reach 500 points you are finished with the session. When you are finished press “q” to quit the session. The data will be saved automatically. 
+
+- **IMPORTANT**: when you are done, press "q". And then be patient, your performance data will take a second to be uploaded to our secured server on the Open Science Framework. 
+
+-**COMMON ISSUES**: 
+
+-if you stop at the end of the grating and no image is presented within a few seconds use the up arrow to move to the next grating. 
+
+-TIP: once you get to the gratings slow down and inch forward until you are near the end of the last stripe. This will help the image to pop up.
+

@@ -10,5 +10,3 @@ dependencies:
   - python=3.8.1
   - scipy=1.4.1
   - pyglet=1.5.0
-  - pip:
-    - panda3d==1.10.5
